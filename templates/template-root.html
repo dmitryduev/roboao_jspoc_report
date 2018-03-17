@@ -1,0 +1,425 @@
+{% extends "template.html" %}
+
+{# custom css #}
+{% block css %}
+    <link rel="stylesheet" href="{{-script_root-}}/static/css/tempusdominus-bootstrap-4.min.css">
+{% endblock %}
+
+{% block nav_home %}
+    active
+{% endblock %}
+
+{% block body %}
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h3>Robo-AO Laser Status Report / Quick Look Report</h3><br>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4">
+                JSpOC SSA Ops Cell: <span style="font-weight: 500">(805) 605-6546</span>
+                <br><br>
+
+                <div style="overflow:hidden;">
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-8">
+                                <div id="datetimepicker"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-8">
+
+                <form>
+
+                    <div class="form-group row">
+                        <label class="col-sm-4 col-form-label"
+                               for="datetimepicker_local">Local time</label>
+                        <div class="input-group col-sm-8">
+                            <input type="text" class="form-control form-control-sm datetimepicker-input"
+                                   name="datetimepicker_local" id="datetimepicker_local"
+                                   data-target="#datetimepicker_local">
+                            <div class="input-group-addon">
+                                <div class="input-group-append" data-target="#datetimepicker_local"
+                                     data-toggle="datetimepicker">
+                                    <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h6>Laser Status Report</h6>
+
+                    <div class="form-group row">
+                        <label class="col-sm-4 col-form-label"
+                               for="observer_name">Name / Organization</label>
+                        <div class="col-sm-8">
+                            <div class="row">
+                                <div class="col-12">
+                                    Hi, this is<br>
+                                    <select class="form-control form-control-sm"
+                                            id="observer_name" name="observer_name">
+                                        <option>Dmitry Duev</option>
+                                        <option>Maissa Salama</option>
+                                        <option>Michael Coughlin</option>
+                                        <option>Reed Riddle</option>
+                                        <option>Christoph Baranec</option>
+                                        <option>Shrinivas Kulkarni</option>
+                                    </select>
+                                    I am a remote observer for Kitt Peak National Observatory.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-sm-4 col-form-label"
+                               for="datetimepicker_start_call">Date / Time of Call (UTC)</label>
+                        <div class="col-sm-8">
+                            <div class="row">
+                                <div class="col-12">
+                                    The date and time is<br>
+                                    <div class="input-group">
+                                        <input type="text" class="form-control form-control-sm datetimepicker-input"
+                                               name="datetimepicker_start_call" id="datetimepicker_start_call"
+                                               data-target="#datetimepicker_start_call">
+                                        <div class="input-group-addon">
+                                            <div class="input-group-append" data-target="#datetimepicker_start_call"
+                                                 data-toggle="datetimepicker">
+                                                <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    UTC.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-sm-4">
+                            Classification / Communications
+                        </div>
+                        <div class="col-sm-8">
+                            This is an unclassified call and sounds clear.
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-sm-4">
+                            Laser System
+                        </div>
+                        <div class="col-sm-8">
+                            This is regarding the Robo-AO laser.
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-sm-4 col-form-label"
+                               for="datetimepicker_start_expected_start">Expected Start Time (UTC)</label>
+                        <div class="col-sm-8">
+                            <div class="row">
+                                <div class="col-12">
+                                    We have an expected start time of<br>
+                                    <div class="input-group">
+                                        <input type="text" class="form-control form-control-sm datetimepicker-input"
+                                               name="datetimepicker_start_expected_start"
+                                               id="datetimepicker_start_expected_start"
+                                               data-target="#datetimepicker_start_expected_start">
+                                        <div class="input-group-addon">
+                                            <div class="input-group-append"
+                                                 data-target="#datetimepicker_start_expected_start"
+                                                 data-toggle="datetimepicker">
+                                                <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    UTC.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-sm-4 col-form-label"
+                               for="datetimepicker_start_expected_stop">Expected Stop Time (UTC)</label>
+                        <div class="col-sm-8">
+                            <div class="row">
+                                <div class="col-12">
+                                    We have an expected stop time of<br>
+                                    <div class="input-group">
+                                        <input type="text" class="form-control form-control-sm datetimepicker-input"
+                                               name="datetimepicker_start_expected_stop"
+                                               id="datetimepicker_start_expected_stop"
+                                               data-target="#datetimepicker_start_expected_stop">
+                                        <div class="input-group-addon">
+                                            <div class="input-group-append"
+                                                 data-target="#datetimepicker_start_expected_stop"
+                                                 data-toggle="datetimepicker">
+                                                <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    UTC.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-sm-4 col-form-label"
+                               for="observer_name">Status of System </label>
+                        <div class="col-sm-8">
+                            <div class="row">
+                                <div class="col-12">
+                                    Our status is<br>
+                                    <select class="form-control form-control-sm"
+                                            id="system_status" name="system_status">
+                                        <option>green</option>
+                                        <option>red</option>
+                                    </select>
+                                    and we’re<br>
+                                    <select class="form-control form-control-sm"
+                                            id="system_status_moto" name="system_status_moto">
+                                        <option>ready to go.</option>
+                                        <option>not observing tonight.</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h6>Quick Look Report</h6>
+
+                    <div class="form-group row">
+                        <label class="col-sm-4 col-form-label"
+                               for="observer_name_end">Name / Organization</label>
+                        <div class="col-sm-8">
+                            <div class="row">
+                                <div class="col-12">
+                                    Hi, this is<br>
+                                    <select class="form-control form-control-sm"
+                                            id="observer_name_end" name="observer_name_end">
+                                        <option>Dmitry Duev</option>
+                                        <option>Maissa Salama</option>
+                                        <option>Michael Coughlin</option>
+                                        <option>Reed Riddle</option>
+                                        <option>Christoph Baranec</option>
+                                        <option>Shrinivas Kulkarni</option>
+                                    </select>
+                                    I am a remote observer for Kitt Peak National Observatory.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-sm-4 col-form-label"
+                               for="datetimepicker_end_call">Date / Time of Call (UTC)</label>
+                        <div class="col-sm-8">
+                            <div class="row">
+                                <div class="col-12">
+                                    The date and time is<br>
+                                    <div class="input-group">
+                                        <input type="text" class="form-control form-control-sm datetimepicker-input"
+                                               name="datetimepicker_end_call" id="datetimepicker_end_call"
+                                               data-target="#datetimepicker_end_call">
+                                        <div class="input-group-addon">
+                                            <div class="input-group-append" data-target="#datetimepicker_end_call"
+                                                 data-toggle="datetimepicker">
+                                                <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    UTC.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-sm-4">
+                            Classification / Communications
+                        </div>
+                        <div class="col-sm-8">
+                            This is an unclassified call and sounds clear.
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-sm-4">
+                            Laser System
+                        </div>
+                        <div class="col-sm-8">
+                            This is regarding the Robo-AO laser.
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-sm-4 col-form-label"
+                               for="datetimepicker_end_actual_stop">Actual Stop Time (UTC)</label>
+                        <div class="col-sm-8">
+                            <div class="row">
+                                <div class="col-12">
+                                    We have an expected stop time of<br>
+                                    <div class="input-group">
+                                        <input type="text" class="form-control form-control-sm datetimepicker-input"
+                                               name="datetimepicker_end_actual_stop"
+                                               id="datetimepicker_end_actual_stop"
+                                               data-target="#datetimepicker_end_actual_stop">
+                                        <div class="input-group-addon">
+                                            <div class="input-group-append"
+                                                 data-target="#datetimepicker_end_actual_stop"
+                                                 data-toggle="datetimepicker">
+                                                <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    UTC.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-sm-4">
+                            Assessment of Parameters
+                        </div>
+                        <div class="col-sm-8">
+                            We operated within authorized parameters.
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-sm-4 col-form-label"
+                               for="success_summary">Summary of Success</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control form-control-sm"
+                                               name="success_summary" id="success_summary">
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-sm-4">
+                            Thank JSpOC!
+                        </div>
+                    </div>
+
+                    <div class="float-right">
+                        <button type="button" class="btn btn-success" id="save-report">Save report</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </div>
+
+
+{% endblock %}
+
+{% block js %}
+    <script src="{{-script_root-}}/static/js/moment.js"></script>
+    <script src="{{-script_root-}}/static/js/tempusdominus-bootstrap-4.min.js"></script>
+
+    <script>
+
+        // datepicker
+        $(function () {
+            $('#datetimepicker').datetimepicker({
+                inline: true,
+                {#defaultDate: moment().utc(),#}
+                defaultDate: moment("{{ date }}").format('YYYYMMDD'),
+                format: 'YMMDD'
+            });
+
+            $("#datetimepicker").on("change.datetimepicker", function (e) {
+                {#alert(e.date.format('YYYYMMDD'));#}
+                window.location.href = "?date=" + e.date.format('YYYYMMDD');
+            });
+
+            // local time
+            $('#datetimepicker_local').datetimepicker({
+                defaultDate: moment()
+            });
+
+            // call time at start of night
+            $('#datetimepicker_start_call').datetimepicker({
+                defaultDate: moment()
+            });
+
+            $('#datetimepicker_start_expected_start').datetimepicker({
+                defaultDate: moment()
+            });
+
+            $('#datetimepicker_start_expected_stop').datetimepicker({
+                defaultDate: moment()
+            });
+
+            // call time at start of night
+            $('#datetimepicker_end_call').datetimepicker({
+                defaultDate: moment()
+            });
+
+            $('#datetimepicker_end_actual_stop').datetimepicker({
+                defaultDate: moment()
+            });
+
+
+        });
+
+        // save report
+        $('#save-report').click(function (e) {
+            // Extract info from data-* attributes
+            var user = $(this).data('user');
+            bootbox.confirm("Do you want to save the report?", function(result) {
+                if (result) {
+                    $.ajax({url: '{{-script_root-}}/save_report?' + $('#report-form').serialize(),
+                        method: 'GET',
+                        success: function(data) {
+                            if (data=='success') {
+                                location.reload(true);
+                            }
+                            else {
+                                showFlashingMessage('Info:', 'Failed to save report', 'danger');
+                            }
+                        },
+                        error: function(data) {
+                            showFlashingMessage('Info:', 'Failed to save report', 'danger');
+                        }
+                    });
+                }
+            });
+            return false;
+        });
+
+        // show flashing messages
+        function showFlashingMessage(title, message, type) {
+            $.notify({title: title, message: message},
+                {placement: {
+                    from: "bottom",
+                    align: "right"
+                },
+                    type: type,
+                    template: '<div data-notify="container" class="col-xs-11 col-sm-3 alert alert-{0}" role="alert" ' +
+                    'style="max-width:400px; font-size: 0.75rem;">' +
+                    '<button type="button" aria-hidden="true" class="close" data-notify="dismiss">×</button>' +
+                    '<span data-notify="icon"></span> ' +
+                    '<span data-notify="title">{1}</span> ' +
+                    '<span data-notify="message">{2}</span>' +
+                    '<div class="progress" data-notify="progressbar">' +
+                    '<div class="progress-bar progress-bar-{0}" role="progressbar" aria-valuenow="0" ' +
+                    'aria-valuemin="0" aria-valuemax="100" style="width: 0%;"></div>' +
+                    '</div>' +
+                    '<a href="{3}" target="{4}" data-notify="url"></a>' +
+                    '</div>'
+                                        });
+        }
+    </script>
+{% endblock %}
