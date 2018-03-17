@@ -55,263 +55,294 @@
                         </div>
                     </div>
 
-                    <h6>Laser Status Report</h6>
-
-                    <div class="form-group row">
-                        <label class="col-sm-4 col-form-label"
-                               for="observer_name">Name / Organization</label>
-                        <div class="col-sm-8">
-                            <div class="row">
-                                <div class="col-12">
-                                    Hi, this is<br>
-                                    <select class="form-control form-control-sm"
-                                            id="observer_name" name="observer_name">
-                                        <option>Dmitry Duev</option>
-                                        <option>Maissa Salama</option>
-                                        <option>Michael Coughlin</option>
-                                        <option>Reed Riddle</option>
-                                        <option>Christoph Baranec</option>
-                                        <option>Shrinivas Kulkarni</option>
-                                    </select>
-                                    I am a remote observer for Kitt Peak National Observatory.
-                                </div>
-                            </div>
+                    <div id="accordion">
+                    <div class="card">
+                        <div class="card-header" id="headingOne">
+                            <h5 class="mb-0">
+                                <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne"
+                                        aria-expanded="true" aria-controls="collapseOne">
+                                    Laser Status Report
+                                </button>
+                            </h5>
                         </div>
-                    </div>
 
-                    <div class="form-group row">
-                        <label class="col-sm-4 col-form-label"
-                               for="datetimepicker_start_call">Date / Time of Call (UTC)</label>
-                        <div class="col-sm-8">
-                            <div class="row">
-                                <div class="col-12">
-                                    The date and time is<br>
-                                    <div class="input-group">
-                                        <input type="text" class="form-control form-control-sm datetimepicker-input"
-                                               name="datetimepicker_start_call" id="datetimepicker_start_call"
-                                               data-target="#datetimepicker_start_call">
-                                        <div class="input-group-addon">
-                                            <div class="input-group-append" data-target="#datetimepicker_start_call"
-                                                 data-toggle="datetimepicker">
-                                                <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                        <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
+                             data-parent="#accordion">
+                            <div class="card-body">
+
+                                <div class="form-group row">
+                                    <label class="col-sm-4 col-form-label"
+                                           for="observer_name">Name / Organization</label>
+                                    <div class="col-sm-8">
+                                        <div class="row">
+                                            <div class="col-12">
+                                                Hi, this is<br>
+                                                <select class="form-control form-control-sm"
+                                                        id="observer_name" name="observer_name">
+                                                    <option>Dmitry Duev</option>
+                                                    <option>Maissa Salama</option>
+                                                    <option>Michael Coughlin</option>
+                                                    <option>Reed Riddle</option>
+                                                    <option>Christoph Baranec</option>
+                                                    <option>Shrinivas Kulkarni</option>
+                                                </select>
+                                                I am a remote observer for Kitt Peak National Observatory.
                                             </div>
                                         </div>
                                     </div>
-                                    UTC.
                                 </div>
-                            </div>
-                        </div>
-                    </div>
 
-                    <div class="row">
-                        <div class="col-sm-4">
-                            Classification / Communications
-                        </div>
-                        <div class="col-sm-8">
-                            This is an unclassified call and sounds clear.
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-sm-4">
-                            Laser System
-                        </div>
-                        <div class="col-sm-8">
-                            This is regarding the Robo-AO laser.
-                        </div>
-                    </div>
-
-                    <div class="form-group row">
-                        <label class="col-sm-4 col-form-label"
-                               for="datetimepicker_start_expected_start">Expected Start Time (UTC)</label>
-                        <div class="col-sm-8">
-                            <div class="row">
-                                <div class="col-12">
-                                    We have an expected start time of<br>
-                                    <div class="input-group">
-                                        <input type="text" class="form-control form-control-sm datetimepicker-input"
-                                               name="datetimepicker_start_expected_start"
-                                               id="datetimepicker_start_expected_start"
-                                               data-target="#datetimepicker_start_expected_start">
-                                        <div class="input-group-addon">
-                                            <div class="input-group-append"
-                                                 data-target="#datetimepicker_start_expected_start"
-                                                 data-toggle="datetimepicker">
-                                                <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                                <div class="form-group row">
+                                    <label class="col-sm-4 col-form-label"
+                                           for="datetimepicker_start_call">Date / Time of Call (UTC)</label>
+                                    <div class="col-sm-8">
+                                        <div class="row">
+                                            <div class="col-12">
+                                                The date and time is<br>
+                                                <div class="input-group">
+                                                    <input type="text" class="form-control form-control-sm datetimepicker-input"
+                                                           name="datetimepicker_start_call" id="datetimepicker_start_call"
+                                                           data-target="#datetimepicker_start_call">
+                                                    <div class="input-group-addon">
+                                                        <div class="input-group-append" data-target="#datetimepicker_start_call"
+                                                             data-toggle="datetimepicker">
+                                                            <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                UTC.
                                             </div>
                                         </div>
                                     </div>
-                                    UTC.
                                 </div>
-                            </div>
-                        </div>
-                    </div>
 
-                    <div class="form-group row">
-                        <label class="col-sm-4 col-form-label"
-                               for="datetimepicker_start_expected_stop">Expected Stop Time (UTC)</label>
-                        <div class="col-sm-8">
-                            <div class="row">
-                                <div class="col-12">
-                                    We have an expected stop time of<br>
-                                    <div class="input-group">
-                                        <input type="text" class="form-control form-control-sm datetimepicker-input"
-                                               name="datetimepicker_start_expected_stop"
-                                               id="datetimepicker_start_expected_stop"
-                                               data-target="#datetimepicker_start_expected_stop">
-                                        <div class="input-group-addon">
-                                            <div class="input-group-append"
-                                                 data-target="#datetimepicker_start_expected_stop"
-                                                 data-toggle="datetimepicker">
-                                                <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                                <div class="row">
+                                    <div class="col-sm-4">
+                                        Classification / Communications
+                                    </div>
+                                    <div class="col-sm-8">
+                                        This is an unclassified call and sounds clear.
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-sm-4">
+                                        Laser System
+                                    </div>
+                                    <div class="col-sm-8">
+                                        This is regarding the Robo-AO laser.
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label class="col-sm-4 col-form-label"
+                                           for="datetimepicker_start_expected_start">Expected Start Time (UTC)</label>
+                                    <div class="col-sm-8">
+                                        <div class="row">
+                                            <div class="col-12">
+                                                We have an expected start time of<br>
+                                                <div class="input-group">
+                                                    <input type="text" class="form-control form-control-sm datetimepicker-input"
+                                                           name="datetimepicker_start_expected_start"
+                                                           id="datetimepicker_start_expected_start"
+                                                           data-target="#datetimepicker_start_expected_start">
+                                                    <div class="input-group-addon">
+                                                        <div class="input-group-append"
+                                                             data-target="#datetimepicker_start_expected_start"
+                                                             data-toggle="datetimepicker">
+                                                            <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                UTC.
                                             </div>
                                         </div>
                                     </div>
-                                    UTC.
                                 </div>
-                            </div>
-                        </div>
-                    </div>
 
-                    <div class="form-group row">
-                        <label class="col-sm-4 col-form-label"
-                               for="observer_name">Status of System </label>
-                        <div class="col-sm-8">
-                            <div class="row">
-                                <div class="col-12">
-                                    Our status is<br>
-                                    <select class="form-control form-control-sm"
-                                            id="system_status" name="system_status">
-                                        <option>green</option>
-                                        <option>red</option>
-                                    </select>
-                                    and we’re<br>
-                                    <select class="form-control form-control-sm"
-                                            id="system_status_moto" name="system_status_moto">
-                                        <option>ready to go.</option>
-                                        <option>not observing tonight.</option>
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <h6>Quick Look Report</h6>
-
-                    <div class="form-group row">
-                        <label class="col-sm-4 col-form-label"
-                               for="observer_name_end">Name / Organization</label>
-                        <div class="col-sm-8">
-                            <div class="row">
-                                <div class="col-12">
-                                    Hi, this is<br>
-                                    <select class="form-control form-control-sm"
-                                            id="observer_name_end" name="observer_name_end">
-                                        <option>Dmitry Duev</option>
-                                        <option>Maissa Salama</option>
-                                        <option>Michael Coughlin</option>
-                                        <option>Reed Riddle</option>
-                                        <option>Christoph Baranec</option>
-                                        <option>Shrinivas Kulkarni</option>
-                                    </select>
-                                    I am a remote observer for Kitt Peak National Observatory.
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="form-group row">
-                        <label class="col-sm-4 col-form-label"
-                               for="datetimepicker_end_call">Date / Time of Call (UTC)</label>
-                        <div class="col-sm-8">
-                            <div class="row">
-                                <div class="col-12">
-                                    The date and time is<br>
-                                    <div class="input-group">
-                                        <input type="text" class="form-control form-control-sm datetimepicker-input"
-                                               name="datetimepicker_end_call" id="datetimepicker_end_call"
-                                               data-target="#datetimepicker_end_call">
-                                        <div class="input-group-addon">
-                                            <div class="input-group-append" data-target="#datetimepicker_end_call"
-                                                 data-toggle="datetimepicker">
-                                                <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                                <div class="form-group row">
+                                    <label class="col-sm-4 col-form-label"
+                                           for="datetimepicker_start_expected_stop">Expected Stop Time (UTC)</label>
+                                    <div class="col-sm-8">
+                                        <div class="row">
+                                            <div class="col-12">
+                                                We have an expected stop time of<br>
+                                                <div class="input-group">
+                                                    <input type="text" class="form-control form-control-sm datetimepicker-input"
+                                                           name="datetimepicker_start_expected_stop"
+                                                           id="datetimepicker_start_expected_stop"
+                                                           data-target="#datetimepicker_start_expected_stop">
+                                                    <div class="input-group-addon">
+                                                        <div class="input-group-append"
+                                                             data-target="#datetimepicker_start_expected_stop"
+                                                             data-toggle="datetimepicker">
+                                                            <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                UTC.
                                             </div>
                                         </div>
                                     </div>
-                                    UTC.
                                 </div>
-                            </div>
-                        </div>
-                    </div>
 
-                    <div class="row">
-                        <div class="col-sm-4">
-                            Classification / Communications
-                        </div>
-                        <div class="col-sm-8">
-                            This is an unclassified call and sounds clear.
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-sm-4">
-                            Laser System
-                        </div>
-                        <div class="col-sm-8">
-                            This is regarding the Robo-AO laser.
-                        </div>
-                    </div>
-
-                    <div class="form-group row">
-                        <label class="col-sm-4 col-form-label"
-                               for="datetimepicker_end_actual_stop">Actual Stop Time (UTC)</label>
-                        <div class="col-sm-8">
-                            <div class="row">
-                                <div class="col-12">
-                                    We have an expected stop time of<br>
-                                    <div class="input-group">
-                                        <input type="text" class="form-control form-control-sm datetimepicker-input"
-                                               name="datetimepicker_end_actual_stop"
-                                               id="datetimepicker_end_actual_stop"
-                                               data-target="#datetimepicker_end_actual_stop">
-                                        <div class="input-group-addon">
-                                            <div class="input-group-append"
-                                                 data-target="#datetimepicker_end_actual_stop"
-                                                 data-toggle="datetimepicker">
-                                                <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                                <div class="form-group row">
+                                    <label class="col-sm-4 col-form-label"
+                                           for="observer_name">Status of System </label>
+                                    <div class="col-sm-8">
+                                        <div class="row">
+                                            <div class="col-12">
+                                                Our status is<br>
+                                                <select class="form-control form-control-sm"
+                                                        id="system_status" name="system_status">
+                                                    <option>green</option>
+                                                    <option>red</option>
+                                                </select>
+                                                and we’re<br>
+                                                <select class="form-control form-control-sm"
+                                                        id="system_status_moto" name="system_status_moto">
+                                                    <option>ready to go.</option>
+                                                    <option>not observing tonight.</option>
+                                                </select>
                                             </div>
                                         </div>
                                     </div>
-                                    UTC.
                                 </div>
+
                             </div>
                         </div>
                     </div>
-
-                    <div class="row">
-                        <div class="col-sm-4">
-                            Assessment of Parameters
+                    <div class="card">
+                        <div class="card-header" id="headingTwo">
+                            <h5 class="mb-0">
+                                <button class="btn btn-link" data-toggle="collapse" data-target="#collapseTwo"
+                                        aria-expanded="false" aria-controls="collapseTwo">
+                                    Quick Look Report
+                                </button>
+                            </h5>
                         </div>
-                        <div class="col-sm-8">
-                            We operated within authorized parameters.
+                        <div id="collapseTwo" class="collapse show" aria-labelledby="headingTwo" data-parent="#accordion">
+                            <div class="card-body">
+
+                                <div class="form-group row">
+                                    <label class="col-sm-4 col-form-label"
+                                           for="observer_name_end">Name / Organization</label>
+                                    <div class="col-sm-8">
+                                        <div class="row">
+                                            <div class="col-12">
+                                                Hi, this is<br>
+                                                <select class="form-control form-control-sm"
+                                                        id="observer_name_end" name="observer_name_end">
+                                                    <option>Dmitry Duev</option>
+                                                    <option>Maissa Salama</option>
+                                                    <option>Michael Coughlin</option>
+                                                    <option>Reed Riddle</option>
+                                                    <option>Christoph Baranec</option>
+                                                    <option>Shrinivas Kulkarni</option>
+                                                </select>
+                                                I am a remote observer for Kitt Peak National Observatory.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label class="col-sm-4 col-form-label"
+                                           for="datetimepicker_end_call">Date / Time of Call (UTC)</label>
+                                    <div class="col-sm-8">
+                                        <div class="row">
+                                            <div class="col-12">
+                                                The date and time is<br>
+                                                <div class="input-group">
+                                                    <input type="text" class="form-control form-control-sm datetimepicker-input"
+                                                           name="datetimepicker_end_call" id="datetimepicker_end_call"
+                                                           data-target="#datetimepicker_end_call">
+                                                    <div class="input-group-addon">
+                                                        <div class="input-group-append" data-target="#datetimepicker_end_call"
+                                                             data-toggle="datetimepicker">
+                                                            <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                UTC.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-sm-4">
+                                        Classification / Communications
+                                    </div>
+                                    <div class="col-sm-8">
+                                        This is an unclassified call and sounds clear.
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-sm-4">
+                                        Laser System
+                                    </div>
+                                    <div class="col-sm-8">
+                                        This is regarding the Robo-AO laser.
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label class="col-sm-4 col-form-label"
+                                           for="datetimepicker_end_actual_stop">Actual Stop Time (UTC)</label>
+                                    <div class="col-sm-8">
+                                        <div class="row">
+                                            <div class="col-12">
+                                                We have an expected stop time of<br>
+                                                <div class="input-group">
+                                                    <input type="text" class="form-control form-control-sm datetimepicker-input"
+                                                           name="datetimepicker_end_actual_stop"
+                                                           id="datetimepicker_end_actual_stop"
+                                                           data-target="#datetimepicker_end_actual_stop">
+                                                    <div class="input-group-addon">
+                                                        <div class="input-group-append"
+                                                             data-target="#datetimepicker_end_actual_stop"
+                                                             data-toggle="datetimepicker">
+                                                            <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                UTC.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-sm-4">
+                                        Assessment of Parameters
+                                    </div>
+                                    <div class="col-sm-8">
+                                        We operated within authorized parameters.
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label class="col-sm-4 col-form-label"
+                                           for="success_summary">Summary of Success</label>
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control form-control-sm"
+                                                           name="success_summary" id="success_summary">
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-sm-4">
+                                        Thank JSpOC!
+                                    </div>
+                                </div>
+
+                            </div>
                         </div>
                     </div>
-
-                    <div class="form-group row">
-                        <label class="col-sm-4 col-form-label"
-                               for="success_summary">Summary of Success</label>
-                        <div class="col-sm-8">
-                            <input type="text" class="form-control form-control-sm"
-                                               name="success_summary" id="success_summary">
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-sm-4">
-                            Thank JSpOC!
-                        </div>
-                    </div>
-
+                </div>
+                    <br>
                     <div class="float-right">
                         <button type="button" class="btn btn-success" id="save-report">Save report</button>
                     </div>
