@@ -37,7 +37,7 @@
 
             <div class="col-md-8">
 
-                <form>
+                <form id="report-form">
 
                     <div class="form-group row">
                         <label class="col-sm-4 col-form-label"
@@ -433,8 +433,6 @@ a target scrub, use this report to notify the LCH of the cancellation and provid
 
         // save report
         $('#save-report').click(function (e) {
-            // Extract info from data-* attributes
-            var user = $(this).data('user');
             bootbox.confirm("Do you want to save the report?", function(result) {
                 if (result) {
                     $.ajax({url: '{{-script_root-}}/save_report?' + $('#report-form').serialize(),
