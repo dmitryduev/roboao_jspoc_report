@@ -40,6 +40,7 @@
                 <form id="report-form">
 
                     <div class="form-group row">
+                        <input type="hidden" name="obsdate" id="obsdate" value="" />
                         <label class="col-sm-4 col-form-label"
                                for="datetimepicker_local">Local time</label>
                         <div class="input-group col-sm-8">
@@ -311,7 +312,7 @@ a target scrub, use this report to notify the LCH of the cancellation and provid
                                     <div class="col-sm-8">
                                         <div class="row">
                                             <div class="col-12">
-                                                We have an expected stop time of<br>
+                                                We had a stop time of<br>
                                                 <div class="input-group">
                                                     <input type="text" class="form-control form-control-sm datetimepicker-input"
                                                            name="datetimepicker_end_actual_stop"
@@ -386,14 +387,19 @@ a target scrub, use this report to notify the LCH of the cancellation and provid
     <script src="{{-script_root-}}/static/js/tempusdominus-bootstrap-4.min.js"></script>
 
     <script>
+        // date
+        $(function () {
+            $('#obsdate').val('{{ date }}');
+        });
 
         // datepicker
         $(function () {
+            // main calendar
             $('#datetimepicker').datetimepicker({
                 inline: true,
                 {#defaultDate: moment().utc(),#}
                 defaultDate: moment("{{ date }}").format('YYYYMMDD'),
-                format: 'YMMDD'
+                format: 'YYYYMMDD'
             });
 
             $("#datetimepicker").on("change.datetimepicker", function (e) {
@@ -403,29 +409,41 @@ a target scrub, use this report to notify the LCH of the cancellation and provid
 
             // local time
             $('#datetimepicker_local').datetimepicker({
-                defaultDate: moment()
+                defaultDate: moment(),
+                sideBySide: true,
+                format: 'YYYY-MM-DDTHH:mm'
             });
 
             // call time at start of night
             $('#datetimepicker_start_call').datetimepicker({
-                defaultDate: moment()
+                defaultDate: moment().utc(),
+                format: 'YYYY-MM-DDTHH:mm',
+                sideBySide: true
             });
 
             $('#datetimepicker_start_expected_start').datetimepicker({
-                defaultDate: moment()
+                defaultDate: moment().utc(),
+                format: 'YYYY-MM-DDTHH:mm',
+                sideBySide: true
             });
 
             $('#datetimepicker_start_expected_stop').datetimepicker({
-                defaultDate: moment()
+                defaultDate: moment().utc(),
+                format: 'YYYY-MM-DDTHH:mm',
+                sideBySide: true
             });
 
             // call time at start of night
             $('#datetimepicker_end_call').datetimepicker({
-                defaultDate: moment()
+                defaultDate: moment().utc(),
+                format: 'YYYY-MM-DDTHH:mm',
+                sideBySide: true
             });
 
             $('#datetimepicker_end_actual_stop').datetimepicker({
-                defaultDate: moment()
+                defaultDate: moment().utc(),
+                format: 'YYYY-MM-DDTHH:mm',
+                sideBySide: true
             });
 
 
@@ -438,8 +456,8 @@ a target scrub, use this report to notify the LCH of the cancellation and provid
                     $.ajax({url: '{{-script_root-}}/save_report?' + $('#report-form').serialize(),
                         method: 'GET',
                         success: function(data) {
-                            if (data=='success') {
-                                location.reload(true);
+                            if (data == 'success') {
+                                showFlashingMessage('Info:', 'Successfully saved report', 'success');
                             }
                             else {
                                 showFlashingMessage('Info:', 'Failed to save report', 'danger');
@@ -477,4 +495,14 @@ a target scrub, use this report to notify the LCH of the cancellation and provid
                                         });
         }
     </script>
+
+    {% if report != None %}
+    <script>
+        $(function () {
+            {% for k in report %}
+                $('#{{ k }}').val('{{ report[k] }}');
+            {% endfor %}
+        });
+    </script>
+    {% endif %}
 {% endblock %}

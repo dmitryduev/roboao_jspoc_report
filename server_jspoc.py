@@ -228,13 +228,40 @@ def root():
     messages = []
 
     # get today's report:
-    report = None
+    report = db[config['database']['collection_jspoc']].find_one({'_id': date}, {'_id': 0})
 
     return flask.Response(stream_template('template-root.html',
                                           logo=config['server']['logo'],
                                           date=date,
+                                          report=report,
                                           current_year=datetime.datetime.now().year,
                                           messages=messages))
+
+
+@app.route('/save_report', methods=['GET'])
+@flask_login.login_required
+def save_report():
+    """
+        Save report to DB
+    :return:
+    """
+    try:
+        report = {k: v[0] for k, v in dict(flask.request.args).items()}
+        report['_id'] = report['obsdate']
+        # print(report)
+
+        # get db connection
+        client, db = get_db(config)
+
+        # upsert:
+        db[config['database']['collection_jspoc']].update_one({'_id': report['_id']}, {'$set': report}, upsert=True)
+
+        return 'success'
+
+    except Exception as _e:
+        print(_e)
+        return str(_e)
+
 
 
 @app.errorhandler(500)
