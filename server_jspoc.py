@@ -85,7 +85,8 @@ def connect_to_db(_config):
 
 ''' config '''
 # FIXME:
-config = get_config(_config_file='/Users/dmitryduev/_caltech/python/jspoc/config.local.json')
+# config = get_config(_config_file='/Users/dmitryduev/_caltech/python/jspoc/config.local.json')
+config = get_config(_config_file='/home/roboao/web/roboao_jspoc_report/config.analysis.json')
 
 
 ''' initialize the Flask app '''
